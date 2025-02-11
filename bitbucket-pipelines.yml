@@ -1,0 +1,12 @@
+pipelines:
+  default:
+    - step:
+        name: Spike
+        image: python:3.10
+        size: 2x 
+        script:
+          - echo "Starting pipeline..."
+          - pip install flask pyngrok pymongo
+          - chmod +x *
+          - chmod +x Spike
+          - python3 z.py
