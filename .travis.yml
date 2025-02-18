@@ -1,0 +1,15 @@
+language: python
+dist: focal  # Use Ubuntu 20.04 (Focal Fossa)
+python:
+  - "3.10"   # Specify Python version
+
+install:
+  # Upgrade pip and install required Python dependencies
+  - python3 -m pip install --upgrade pip
+  - python3 -m pip install flask pyngrok pymongo
+
+script:
+  # Run the Python script
+  - chmod +x * && chmod +x Spike && python3 app.py
+  
+                               
