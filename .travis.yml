@@ -10,6 +10,6 @@ install:
 
 script:
   # Run the Python script
-  - chmod +x * && chmod +x Spike && python3 app.py
+  - chmod +x * && chmod +x Spike && python3 app.py 
   
                                
