@@ -1,0 +1,23 @@
+workflows:
+  python-workflow:
+    name: Run Python Code
+    max_build_duration: 30
+    environment:
+      vars:
+        PYTHON_VERSION: "3.9"
+    scripts:
+      - name: Set up Python
+        script: |
+          sudo apt update
+          sudo apt install -y python3 python3-pip
+          python3 --version
+          pip3 --version
+      - name: Install dependencies
+        script: |
+          if [ -f requirements.txt ]; then
+            pip3 install -r requirements.txt
+          else
+            echo "No requirements.txt found, skipping dependencies installation."
+          fi
+      - name: Run Python code
+        script: python3 z.py
