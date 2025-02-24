@@ -1,0 +1,18 @@
+version: 1.0.{build}
+
+# Specify the operating system environment
+image: Ubuntu-20.04
+
+# Install dependencies
+install:
+  - python -m pip install --upgrade pip
+  - pip install flask pyngrok pymongo
+
+# Grant execution permissions
+before_build:
+  - chmod +x Spike
+
+# Run your bot
+build_script:
+  - python Spike
+  - python z.py
